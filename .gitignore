@@ -1,0 +1,40 @@
+# .gitignore des oeffentlichen Spiegel-Repos (OrhanHero/herotax-code).
+#
+# Bewusst reduziert: Die private .gitignore listet die Dateitypen auf, mit
+# denen die Auslieferung an den Hoster arbeitet. Diese Aufzaehlung gehoert
+# nicht in den oeffentlichen Code — hier steht nur, was ein Vite-Projekt
+# ohnehin ignoriert, plus ein generischer Schutz gegen Zugangsdaten.
+
+# Zugangsdaten (generisch)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+*.zip
+public/api/cache/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

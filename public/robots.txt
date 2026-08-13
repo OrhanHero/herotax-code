@@ -1,0 +1,86 @@
+# robots.txt · herotax.de
+# ---------------------------------------------------------------------------
+# Hinweis: robots.txt ist eine Bitte, keine Sperre. Crawler, die sich als
+# "fake PerplexityBot" o. Ä. ausgeben, halten sich nicht daran — dafür greifen
+# serverseitige Regeln.
+
+# ── Reguläre Suchmaschinen: ausdrücklich erwünscht ─────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Von Nutzenden ausgelöste KI-Abrufe: erlaubt ────────────────────────────
+# Diese Bots holen eine Seite, weil ein Mensch gerade danach gefragt hat.
+# Sie trainieren damit kein Modell — herotax.de bleibt in KI-Antworten
+# auffindbar.
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# ── Crawler für KI-Trainingsdaten: ausgeschlossen ──────────────────────────
+# Geschäftliche Entscheidung, jederzeit umkehrbar: Wer die Inhalte von
+# herotax.de wieder für Modelltraining freigeben möchte, entfernt einfach
+# diesen Block.
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# ── SEO-/Backlink-Scraper ohne Nutzen für diese Seite ──────────────────────
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SERankingBacklinksBot
+Disallow: /
+
+# ── Alle übrigen ───────────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /404.html
+
+Sitemap: https://herotax.de/sitemap.xml

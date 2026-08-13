@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <title>404 · Seite nicht gefunden — HERO Tax</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --paper: #f8f8f4;
+        --card: #ffffff;
+        --text: #121215;
+        --muted: #5a5a62;
+        --line: #dfdfd8;
+        --blue: #2337e8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #0b0d16;
+          --card: #12151f;
+          --text: #eceef5;
+          --muted: #9a9fb0;
+          --line: #232838;
+          --blue: #6f80ff;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: var(--paper);
+        color: var(--text);
+        font-family: "Archivo", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main {
+        max-width: 34rem;
+        width: 100%;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 40px 32px;
+      }
+      .code {
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin: 0 0 12px;
+      }
+      h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 12px; }
+      p { color: var(--muted); line-height: 1.6; margin: 0 0 24px; font-size: 0.95rem; }
+      nav { display: flex; flex-wrap: wrap; gap: 8px; }
+      a {
+        display: inline-block;
+        padding: 9px 14px;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.875rem;
+      }
+      a.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+      a:hover { border-color: var(--blue); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="code">Fehler 404</p>
+      <h1>Diese Seite gibt es nicht.</h1>
+      <p>
+        Die aufgerufene Adresse existiert auf herotax.de nicht. Möglicherweise
+        ist der Link veraltet oder enthält einen Tippfehler.
+      </p>
+      <nav>
+        <a class="primary" href="/">Zur Startseite</a>
+        <a href="/news">News</a>
+        <a href="/tools">Tools</a>
+        <a href="/impressum">Impressum</a>
+      </nav>
+    </main>
+  </body>
+</html>

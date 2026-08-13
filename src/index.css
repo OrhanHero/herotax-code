@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+/* Der ThemeProvider schaltet über `html.dark` um — Tailwind v4 bindet die
+   dark-Variante per Default an `prefers-color-scheme`. Ohne dieses Mapping
+   greift keine einzige `dark:`-Utility beim manuellen Umschalten. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Self-hosted Google Fonts (Focused Subsets: Latin & Arabic) ── */
+@import "@fontsource/archivo/latin-500.css";
+@import "@fontsource/archivo/latin-600.css";
+@import "@fontsource/archivo/latin-700.css";
+@import "@fontsource/archivo/latin-900.css";
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+@import "@fontsource/noto-sans-arabic/arabic-400.css";
+@import "@fontsource/noto-sans-arabic/arabic-500.css";
+@import "@fontsource/noto-sans-arabic/arabic-700.css";
+@import "@fontsource/noto-sans-arabic/arabic-900.css";
+
+:root {
+  --color-paper: #F8F8F4;
+  --color-card: #FFFFFF;
+  --color-wash: #EFEFE8;
+  --color-line: #DFDFD8;
+  --color-line-soft: #E8E8E2;
+  --color-text: #121215;
+  --color-muted: #5A5A62;
+  --color-faint: #686874;
+  --color-blue: #2337E8;
+  --color-blue-ink: #FFFFFF;
+  --color-blue-dim: rgba(35, 55, 232, 0.07);
+  --color-blue-border: rgba(35, 55, 232, 0.22);
+  --color-shadow: 0 2px 4px rgba(18,18,21,0.04), 0 12px 28px -12px rgba(18,18,21,0.08);
+  --color-header-bg: rgba(248, 248, 244, 0.94);
+  --color-glass-bg: rgba(255, 255, 255, 0.72);
+  --color-glass-border: rgba(255, 255, 255, 0.55);
+  --blueprint-grid-color: rgba(35, 55, 232, 0.05);
+  --blueprint-dots-color: rgba(35, 55, 232, 0.14);
+  --color-ink: #121215;
+  --color-ink-text: #FFFFFF;
+  --color-ink-muted: #9AA3B2;
+  --color-ink-accent: #8FA0FF;
+}
+
+html.dark {
+  --color-paper: #0A0D14;
+  --color-card: #121723;
+  --color-wash: #1B2232;
+  --color-line: #253046;
+  --color-line-soft: #1E2738;
+  --color-text: #F0F4FC;
+  --color-muted: #A3B2C7;
+  /* #64748B lag als Meta-Farbe unter WCAG AA (≈3.8:1 auf den Karten) */
+  --color-faint: #8A97AC;
+  --color-blue: #6E86FF;
+  --color-blue-ink: #0A0D14;
+  --color-blue-dim: rgba(59, 130, 246, 0.15);
+  --color-blue-border: rgba(59, 130, 246, 0.35);
+  --color-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 12px 28px -12px rgba(0, 0, 0, 0.7);
+  --color-header-bg: rgba(10, 13, 20, 0.92);
+  --color-glass-bg: rgba(18, 23, 35, 0.78);
+  --color-glass-border: rgba(255, 255, 255, 0.09);
+  --blueprint-grid-color: rgba(59, 130, 246, 0.07);
+  --blueprint-dots-color: rgba(59, 130, 246, 0.18);
+  --color-ink: #06080E;
+  --color-ink-text: #E2E8F0;
+  --color-ink-muted: #94A3B8;
+  --color-ink-accent: #A5B4FF;
+}
+
+html, body, #root {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Noto Sans Arabic", sans-serif;
+  background-color: var(--color-paper, #F8F8F4);
+  color: var(--color-text, #121215);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* RTL-Sprachen (AR/KU-Sorani): arabische Glyphen für alle Font-Rollen */
+[dir="rtl"] * {
+  font-family: "Noto Sans Arabic", "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Hardware-Accelerated Moonlight GPU Animations (0% JS CPU Overhead) ── */
+@keyframes moonlight-pulse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(20px, -25px, 0) scale(1.08);
+    opacity: 0.55;
+  }
+}
+
+@keyframes moonlight-pulse-delayed {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(-20px, 30px, 0) scale(1.12);
+    opacity: 0.45;
+  }
+}
+
+.animate-moonlight-pulse {
+  animation: moonlight-pulse 14s ease-in-out infinite;
+}
+
+.animate-moonlight-pulse-delayed {
+  animation: moonlight-pulse-delayed 18s ease-in-out 3s infinite;
+}
+
+/* ── Pulsierender Mondschein-Halo Effect (0% JS CPU Overhead) ── */
+@keyframes moon-halo-pulse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.92);
+    opacity: 0.35;
+    filter: drop-shadow(0 0 35px rgba(147, 197, 253, 0.45));
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.15);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 75px rgba(191, 219, 254, 0.9));
+  }
+}
+
+.animate-moon-halo-pulse {
+  animation: moon-halo-pulse 6s ease-in-out infinite;
+  will-change: transform, opacity, filter;
+}
+
+/* ── Newsticker-Laufband ── */
+.ticker-track {
+  width: max-content;
+  animation: hero-ticker 95s linear infinite;
+}
+.ticker-viewport:hover .ticker-track,
+.ticker-viewport:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes hero-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-ping {
+  animation: hero-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes hero-ping {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ── Berliner Amt & Tech Blueprint Atmosphere ── */
+.bg-blueprint-grid {
+  background-image: 
+    linear-gradient(to right, var(--blueprint-grid-color, rgba(35, 55, 232, 0.05)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--blueprint-grid-color, rgba(35, 55, 232, 0.05)) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-blueprint-dots {
+  background-image: radial-gradient(var(--blueprint-dots-color, rgba(35, 55, 232, 0.14)) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.stamp-seal {
+  transform: rotate(-3deg);
+  border: 2px dashed rgba(225, 6, 0, 0.4);
+  background: rgba(225, 6, 0, 0.04);
+  color: #E10600;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ── Premium Glassmorphism Card ── */
+.glass-card {
+  background: var(--color-glass-bg, rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid var(--color-glass-border, rgba(255, 255, 255, 0.55));
+  box-shadow: var(--color-shadow);
+}
+.glass-card:hover {
+  box-shadow:
+    0 8px 40px rgba(35, 55, 232, 0.16),
+    0 2px 10px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Moonlight Shimmer Animation ── */
+@keyframes moonlight-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.moonlight-shimmer {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: moonlight-shimmer 3.5s ease-in-out infinite;
+}
+
+/* ── Scan-Line Overlay (Blueprint Tech Feel) ── */
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(35, 55, 232, 0.018) 3px,
+    rgba(35, 55, 232, 0.018) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Floating Glow Orb ── */
+@keyframes float-glow {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-20px) scale(1.08); opacity: 0.5; }
+}
+.float-glow {
+  animation: float-glow 6s ease-in-out infinite;
+}
+
+/* ── Card Hover Lift ── */
+.card-lift {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(35, 55, 232, 0.14), 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* ── Fade In Animation ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* ── Slow Spin ── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+/* ── Berlin Moonlight Glow Pulse ── */
+@keyframes moon-glow-pulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(35, 55, 232, 0.22), 0 0 40px rgba(35, 55, 232, 0.08); }
+  50% { box-shadow: 0 0 32px rgba(35, 55, 232, 0.38), 0 0 70px rgba(35, 55, 232, 0.15); }
+}
+.moon-glow-pulse {
+  animation: moon-glow-pulse 3.5s ease-in-out infinite;
+}
+
+/* ── Neon Border Trace ── */
+@keyframes neon-trace {
+  0% { border-color: rgba(35, 55, 232, 0.3); }
+  50% { border-color: rgba(35, 55, 232, 0.7); }
+  100% { border-color: rgba(35, 55, 232, 0.3); }
+}
+.neon-trace {
+  animation: neon-trace 2.5s ease-in-out infinite;
+}
+
+/* ── Gradient Text ── */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #2337E8 0%, #5B6FFF 50%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-berlin {
+  background: linear-gradient(135deg, #2337E8 0%, #8FA0FF 40%, #3B82F6 70%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Image Reveal Effect ── */
+@keyframes img-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0% 0 0); }
+}
+.img-reveal {
+  animation: img-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Hero Grid Pattern ── */
+.hero-grid-pattern {
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(35, 55, 232, 0.06) 0%, transparent 60%),
+    linear-gradient(to right, rgba(35, 55, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 55, 232, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* ── Dark Glassmorphism (für dunkle Panels) ── */
+.hero-glass-dark {
+  background: rgba(8, 10, 24, 0.82);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wash, #F1F1EE);
+}
+::-webkit-scrollbar-thumb {
+  background: #2337E8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1725A8;
+}
