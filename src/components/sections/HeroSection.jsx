@@ -14,17 +14,17 @@ const HeroSection = () => {
   const trends = [
     {
       title: "Agentic AI & FinTech Boom",
-      desc: "Über 45 % aller Berliner Tech-Neugründungen 2026 setzen auf KI-Beleganalyse & Tax Automation.",
+      desc: "KI-Beleganalyse und Tax Automation sind 2026 die Wachstumsfelder der Berliner Tech-Szene — begleitet vom KI Bundesverband mit Sitz in Berlin.",
       tag: "Tech #1 in DE",
       source: "KI Bundesverband e.V.",
       href: "https://ki-verband.de/",
     },
     {
-      title: "18.500+ Neugründungen in H1 2026",
-      desc: "Rekordzuwachs bei den Gewerbeanmeldungen in der Hauptstadt laut offizieller Pressemitteilung.",
-      tag: "+12 % Wachstum",
+      title: "22.306 Gewerbeanmeldungen in H1 2026",
+      desc: "Berlins Gründungsgeschehen bleibt auf Vorjahresniveau — amtlich gemeldet für das 1. Halbjahr 2026.",
+      tag: "−0,5 % ggü. Vorjahr",
       source: "Amt für Statistik Berlin-Brandenburg",
-      href: "https://www.statistik-berlin-brandenburg.de/presse/2026/62-gewerbeanmeldungen-2026-berlin",
+      href: "https://www.statistik-berlin-brandenburg.de/gewerbeanzeigen/",
     },
     {
       title: "CleanTech & Smart Energy",
@@ -62,10 +62,10 @@ const HeroSection = () => {
   const kpis = [
     {
       label: "Risikokapital (H1 2026)",
-      value: "1,4 Mrd. €",
-      detail: "Platz 1 in Deutschland",
-      source: "Berlin Partner Pressemitteilungen",
-      href: "https://www.berlin-partner.de/presse/",
+      value: "1,7 Mrd. €",
+      detail: "+10 % · Platz 1 in Deutschland",
+      source: "EY Startup-Barometer, Juli 2026",
+      href: "https://www.ey.com/de_de/newsroom/2026/07/ey-startup-barometer-deutschland-juli-2026",
     },
     {
       label: "IBB GründungsBONUS Plus",
@@ -75,11 +75,11 @@ const HeroSection = () => {
       href: "https://www.ibb.de/de/foerderprogramme/gruendungsbonus-plus.html",
     },
     {
-      label: "Aktive USt-Voranmelder",
-      value: "168.000",
-      detail: "Gewerbebetriebe in Berlin",
-      source: "Senatsverwaltung für Finanzen Berlin",
-      href: "https://www.berlin.de/sen/finanzen/",
+      label: "Stichtag E-Rechnung (B2B)",
+      value: "01.01.2027",
+      detail: "ab > 800.000 € Vorjahresumsatz",
+      source: "Bundesfinanzministerium · BMF-Schreiben",
+      href: "https://www.bundesfinanzministerium.de/Web/DE/Themen/Steuern/Steuerarten/Umsatzsteuer/BMF_Schreiben_Allgemeines/bmf_schreiben_allgemeines.html",
     },
   ];
 

@@ -7,7 +7,7 @@ import AIImageOverlay from "../atoms/AIImageOverlay";
 /** Säule 03 · EUDI-Wallet (Digitale Identität der EU)
     Eigener Bereich für Stand & Zeitplan des European Digital Identity
     Wallet — hochrelevant für Unternehmer:innen (KYC, Vertragsunterschrift,
-    künftig ggf. Behördengänge), Frist läuft EU-weit Ende 2026. */
+    künftig ggf. Behördengänge), EU-Frist ist der 24. Dezember 2026. */
 const EUDIWalletSection = () => (
   <section className="py-24" style={{ borderTop: `1px solid ${T.lineSoft}` }} id="eudi-wallet">
     <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -22,8 +22,9 @@ const EUDIWalletSection = () => (
           <span style={{ color: T.faint }}>Für ganz Europa.</span>
         </h2>
         <p className="text-sm max-w-xs" style={{ color: T.muted }}>
-          Die EU-weite Frist läuft Ende 2026 — Stand, Zeitplan und was das für
-          dich als Unternehmer:in bedeutet, an einer Stelle.
+          Die EU-Frist ist der 24. Dezember 2026, Deutschland startet am
+          2. Januar 2027 — Stand, Zeitplan und was das für dich als
+          Unternehmer:in bedeutet, an einer Stelle.
         </p>
       </div>
 

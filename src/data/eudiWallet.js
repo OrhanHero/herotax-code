@@ -1,20 +1,20 @@
 import { CalendarClock, Landmark, Smartphone, Code } from "lucide-react";
 
-/** EUDI-Wallet: Status & Zeitplan — Stand 02. August 2026.
+/** EUDI-Wallet: Status & Zeitplan — Stand 13. August 2026.
     Quellen: BMDS, Europäische Kommission, Verbraucherzentrale, BMI/Open Code.
     Bei Aktualisierung: Daten gegen die Quellen unten neu prüfen,
     der Zeitplan verschiebt sich laut BMDS erfahrungsgemäß. */
 export const EUDI_TIMELINE = [
   {
     icon: Landmark,
-    title: "EU-weite Frist: Ende 2026",
-    text: "Nach der eIDAS-2.0-Verordnung (EU) 2024/1183 muss jeder EU-Mitgliedstaat seinen Bürger:innen, Einwohner:innen und Unternehmen mindestens eine EUDI-Wallet zur Verfügung stellen. Alle nationalen Wallets folgen gemeinsamen technischen Standards.",
+    title: "EU-weite Frist: 24. Dezember 2026",
+    text: "Nach der eIDAS-2.0-Verordnung (EU) 2024/1183 muss jeder EU-Mitgliedstaat seinen Bürger:innen, Einwohner:innen und Unternehmen bis zum 24. Dezember 2026 mindestens eine EUDI-Wallet zur Verfügung stellen. Alle nationalen Wallets folgen gemeinsamen technischen Standards.",
     source: { label: "Europäische Kommission — EUDI Wallet", href: "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/694487738/EU+Digital+Identity+Wallet+Home" },
   },
   {
     icon: CalendarClock,
-    title: "Deutschland: Start Anfang 2027 geplant",
-    text: "Das Bundeskabinett hat im Mai 2026 das Digitale-Identitäten-Gesetz (DIdG) beschlossen. Seit Januar 2026 läuft eine Test-Sandbox, im Juni 2026 kamen beim „EUDI ON\"-Community-Event über 400 Teilnehmende zusammen. Der Bund plant zunächst eine staatliche Wallet, rund 12 Monate später sollen zertifizierte private Anbieter folgen.",
+    title: "Deutschland: Start am 2. Januar 2027",
+    text: "Das Bundeskabinett hat im Mai 2026 das Digitale-Identitäten-Gesetz (DIdG) beschlossen, das Digitalministerium hält am Starttermin 2. Januar 2027 fest. Für August 2026 ist die Veröffentlichung des Quellcodes angekündigt, im Oktober und November 2026 folgt die Pilotphase. Der Bund startet mit einer staatlichen Wallet, rund 12 Monate später sollen zertifizierte private Anbieter folgen.",
     source: { label: "BMDS — EUDI-Wallet", href: "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet" },
   },
   {

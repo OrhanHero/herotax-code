@@ -46,7 +46,7 @@ const PrivacySection = () => {
                   DSGVO bei HERO Tax
                 </h3>
                 <p className="text-xs" style={{ ...fontMono, color: T.inkMuted }}>
-                  Privacy by Design · Stand: Juli 2026
+                  Privacy by Design · Stand: August 2026
                 </p>
               </div>
             </div>

@@ -35,14 +35,14 @@ export default function EUAIActSection() {
   const rules = [
     {
       title: "Transparenzpflichten (Art. 50 EU AI Act)",
-      desc: "KI-generierte Texte, Bilder, Videos und Chatbots müssen eindeutig als KI-Erzeugnisse gekennzeichnet werden.",
-      impact: "Pflicht für alle Webseiten & Marketing-Tools",
+      desc: "KI-generierte Texte, Bilder, Videos und Chatbots müssen eindeutig als KI-Erzeugnisse gekennzeichnet werden — bei Deepfakes und synthetischen Medien zusätzlich maschinenlesbar.",
+      impact: "Anwendbar seit 02.08.2026",
       icon: Info,
     },
     {
       title: "KI-Kompetenz im Betrieb (Art. 4 EU AI Act)",
       desc: "Arbeitgeber müssen sicherstellen, dass Mitarbeiter, die KI-Tools nutzen, ausreichend im sicheren Umgang geschult sind.",
-      impact: "Gilt für alle Unternehmen ab Feb 2025",
+      impact: "Anwendbar seit 02.02.2025",
       icon: CheckCircle2,
     },
     {
@@ -98,33 +98,45 @@ export default function EUAIActSection() {
     },
   ];
 
+  /* Stand: 13.08.2026. Der „Digital Omnibus on AI" — Verordnung (EU)
+     2026/1744, in Kraft seit 27.07.2026 — hat die Hochrisiko-Pflichten
+     nach hinten geschoben: Anhang III von 08/2026 auf 02.12.2027,
+     eingebettete Produkte auf 02.08.2028. Vor dem nächsten Update
+     gegen EUR-Lex prüfen, die Fristen sind in Bewegung. */
   const timeline = [
     {
-      date: "Februar 2025",
+      date: "02.02.2025",
       title: "Verbot unzulässiger KI & KI-Schulungspflicht",
       desc: "Geltungsbeginn für KI-Verbote (Art. 5) und Verpflichtung zur KI-Alphabetisierung von Mitarbeitern (Art. 4).",
       status: "In Kraft",
       color: "#10B981",
     },
     {
-      date: "August 2025",
+      date: "02.08.2025",
       title: "GPAI & Governance-Regeln",
-      desc: "Pflichten für General Purpose AI (Basis-Modelle wie GPT-4) und Inkrafttreten der Aufsichtsstrukturen.",
-      status: "Anstehend 2025",
+      desc: "Pflichten für General Purpose AI (Basis-Modelle) und Start der Aufsichtsstrukturen auf EU- und Bundesebene.",
+      status: "In Kraft",
+      color: "#10B981",
+    },
+    {
+      date: "02.08.2026",
+      title: "Transparenzpflichten & Durchsetzung",
+      desc: "Art. 50 gilt: Kennzeichnung von KI-Inhalten, Chatbots und Deepfakes. AI Office und nationale Behörden — in Deutschland die Bundesnetzagentur — beginnen mit der Durchsetzung.",
+      status: "In Kraft",
+      color: "#10B981",
+    },
+    {
+      date: "02.12.2027",
+      title: "Hochrisiko-KI nach Anhang III",
+      desc: "Konformitätsbewertung, Risikomanagement und Dokumentation für eigenständige Hochrisiko-Systeme — durch den Digital Omnibus (VO (EU) 2026/1744) von August 2026 verschoben.",
+      status: "Verschoben · Omnibus",
       color: "#F59E0B",
     },
     {
-      date: "August 2026",
-      title: "Vollanwendung & Hochrisiko-KI",
-      desc: "Strenge Auflagen und Konformitätsprüfungen für Hochrisiko-KI-Systeme treten EU-weit verbindlich in Kraft.",
-      status: "Stichtag 2026",
-      color: "#3B82F6",
-    },
-    {
-      date: "August 2027",
-      title: "Regulierte Industrieprodukte",
-      desc: "Erweiterte Bestimmungen für KI-Systeme als Sicherheitsbauteile in bereits regulierten EU-Produkten.",
-      status: "Stufe 4",
+      date: "02.08.2028",
+      title: "KI in regulierten Produkten",
+      desc: "Erweiterte Bestimmungen für KI-Systeme als Sicherheitsbauteile in bereits regulierten EU-Produkten (Anhang I).",
+      status: "Stufe 5",
       color: "#6B7280",
     },
   ];

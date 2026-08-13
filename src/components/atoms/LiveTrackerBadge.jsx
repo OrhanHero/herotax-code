@@ -6,11 +6,15 @@ import { getTrackerStatusText, clearCache, getArticles } from "../../services/ar
 /**
  * LiveTrackerBadge
  * Displays live tracking status and last-updated timestamp:
- * "Live · Stand: 10.08.2026, 22:58 Uhr (alle 4 Std.)"
+ * "Live · Stand: 13.08.2026, 09:14 Uhr (alle 4 Std.)"
  * Auto-refreshes on a 4-hour interval or manually via button.
+ *
+ * Der Anfangswert kommt direkt aus dem Cache-Zeitstempel, nicht aus einem
+ * fest verdrahteten Datum — sonst zeigt der erste Frame einen Stand, der
+ * mit dem Build altert.
  */
 const LiveTrackerBadge = ({ type = "general", onRefresh, variant = "default" }) => {
-  const [statusText, setStatusText] = useState("");
+  const [statusText, setStatusText] = useState(() => getTrackerStatusText(type));
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const updateStatus = useCallback(() => {
@@ -78,7 +82,7 @@ const LiveTrackerBadge = ({ type = "general", onRefresh, variant = "default" }) 
       </span>
       
       <span className="truncate max-w-[190px] sm:max-w-none">
-        {statusText || "Live · Stand: 10.08.2026, 22:58 Uhr (alle 4 Std.)"}
+        {statusText || "Live · Stand: --.--.----, --:-- Uhr (alle 4 Std.)"}
       </span>
 
       <button
